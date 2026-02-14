@@ -1,12 +1,23 @@
 import { ChartConfig } from "@/components/ui/chart";
+import {
+  BiBarChartAlt2,
+  BiBriefcase,
+  BiCalendar,
+  BiClipboard,
+  BiCog,
+  BiCreditCard,
+  BiGroup,
+  BiHistory,
+  BiShieldQuarter,
+  BiSolidDashboard,
+  BiTask,
+  BiUserCircle,
+  BiVideo,
+  BiWallet,
+} from "react-icons/bi";
+import { Contributor } from "./types";
 
-export type Artist = {
-  name: string;
-  designation: string;
-  imageUrl: string;
-};
-
-export const artists: Artist[] = [
+export const contributors: Contributor[] = [
   {
     name: "Pablo Picasso",
     designation: "Painter, Sculptor",
@@ -21,21 +32,6 @@ export const artists: Artist[] = [
     name: "Vincent van Gogh",
     designation: "Painter",
     imageUrl: "/images/premium_photo-1678197937465-bdbc4ed95815.jpg",
-  },
-  {
-    name: "Leonardo da Vinci",
-    designation: "Painter, Architect",
-    imageUrl: "/images/photo-1609042759065-d8dad38f5a9f.jpg",
-  },
-  {
-    name: "Claude Monet",
-    designation: "Painter",
-    imageUrl: "/images/photo-1542452376175-82b6fb643412.jpg",
-  },
-  {
-    name: "Salvador Dalí",
-    designation: "Surrealist Painter",
-    imageUrl: "/images/premium_photo-1671656349322-41de944d259b.jpg",
   },
   {
     name: "Georgia O'Keeffe",
@@ -62,68 +58,94 @@ export const artists: Artist[] = [
     designation: "Painter",
     imageUrl: "/images/9nfsYstTyWEJKScHr3MV_IMG_6450.jpg",
   },
-  {
-    name: "Henri Matisse",
-    designation: "Painter, Sculptor",
-    imageUrl: "/images/premium_photo-1674777843203-da3ebb9fbca0.jpg",
-  },
-  {
-    name: "Banksy",
-    designation: "Political Activist",
-    imageUrl: "/images/photo-1461935793258-ac2ac2c930b2.jpg",
-  },
-  {
-    name: "Marina Abramović",
-    designation: "Performance Artist",
-    imageUrl: "/images/X7L5hgFXQZazzPaK3goC_14084990857_88cabf3b6d_o.jpg",
-  },
-  {
-    name: "Keith Haring",
-    designation: "Graffiti Artist",
-    imageUrl: "/images/premium_photo-1664541336896-b3d5f7dec9a3.jpg",
-  },
-  {
-    name: "Egon Schiele",
-    designation: "Painter, Draftsman",
-    imageUrl: "/images/photo-1518611540400-6b85a0704342.jpg",
-  },
-  {
-    name: "Gustav Klimt",
-    designation: "Painter",
-    imageUrl: "/images/photo-1533748430324-45f466e36937.jpg",
-  },
-  {
-    name: "Takashi Murakami",
-    designation: "Artist, Sculptor",
-    imageUrl: "/images/premium_photo-1669138512601-e3f00b684edc.jpg",
-  },
-  {
-    name: "Robert Rauschenberg",
-    designation: "Painter, Printmaker",
-    imageUrl: "/images/premium_photo-1673287635678-8d812deb4fc2.jpg",
-  },
-  {
-    name: "Judy Chicago",
-    designation: "Feminist Artist",
-    imageUrl: "/images/43e39040.jpg",
-  },
 ];
 
 export const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { year: 2018, web: 2, mobile: 5, desktop: 3 },
+  { year: 2019, web: 3, mobile: 1, desktop: 3 },
+  { year: 2020, web: 6, mobile: 2, desktop: 2 },
+  { year: 2021, web: 2, mobile: 4, desktop: 3 },
+  { year: 2022, web: 5, mobile: 3, desktop: 2 },
+  { year: 2023, web: 3, mobile: 1, desktop: 4 },
 ];
+
 export const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
+  web: {
+    label: "Web",
+    color: "hsl(var(--chart-3))",
   },
   mobile: {
     label: "Mobile",
     color: "hsl(var(--chart-2))",
   },
+  desktop: {
+    label: "Desktop",
+    color: "hsl(var(--chart-1))",
+  },
 } satisfies ChartConfig;
+
+export const sideMenuButtons = [
+  { label: "Overview", Icon: BiSolidDashboard },
+  { label: "Projects", Icon: BiBriefcase },
+  { label: "Task Management", Icon: BiTask },
+  { label: "Schedule", Icon: BiCalendar },
+  { label: "Team Members", Icon: BiGroup },
+  { label: "Client Portal", Icon: BiUserCircle },
+  { label: "Analytics", Icon: BiBarChartAlt2 },
+  { label: "Reports", Icon: BiClipboard },
+  { label: "Global Settings", Icon: BiCog },
+];
+
+export const projectOverview = [
+  { label: "Total", count: 124, rate: 21 },
+  { label: "Ongoing", count: 19, rate: 25 },
+  { label: "Pending", count: 44, rate: -31 },
+];
+
+export const notifications = [
+  {
+    label: "New client onboarded",
+    time: "5m ago",
+    Icon: BiUserCircle,
+  },
+  {
+    label: "Project reached 80% completion",
+    time: "12m ago",
+    Icon: BiBarChartAlt2,
+  },
+  {
+    label: "Budget limit exceeded",
+    time: "45m ago",
+    Icon: BiWallet,
+  },
+  {
+    label: "Performance report ready",
+    time: "2h ago",
+    Icon: BiClipboard,
+  },
+  {
+    label: "Login attempt detected",
+    time: "3h ago",
+    Icon: BiShieldQuarter,
+  },
+  {
+    label: "New team meeting scheduled",
+    time: "9h ago",
+    Icon: BiVideo,
+  },
+  {
+    label: "Invoice #4402 has been paid",
+    time: "23h ago",
+    Icon: BiCreditCard,
+  },
+  {
+    label: "System backup completed successfully",
+    time: "2d ago",
+    Icon: BiHistory,
+  },
+  {
+    label: "Task 'API Integration' marked as 'Overdue'",
+    time: "2d ago",
+    Icon: BiTask,
+  },
+];

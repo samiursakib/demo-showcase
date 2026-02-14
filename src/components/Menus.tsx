@@ -1,7 +1,7 @@
-import { RiMenu2Fill } from "react-icons/ri";
 import { useGlobalState } from "@/providers/GlobalStateContextProvider";
-import { CustomButton } from "./CustomButton";
 import { BiSearch } from "react-icons/bi";
+import { RiMenu2Fill } from "react-icons/ri";
+import { CustomButton } from "./Buttons";
 
 const Menus = () => {
   const { setGlobalState } = useGlobalState();
