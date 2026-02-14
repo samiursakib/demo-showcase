@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
 import { IconType } from "react-icons";
+import { Button } from "./ui/button";
 
 export const CustomButton = ({
   className,
@@ -36,7 +36,31 @@ export const CustomButton = ({
       onClick={onClick}
     >
       {Icon !== undefined && <Icon className="text-lg" />}
-      <span className="mt-[3px]">{text}</span>
+      <span>{text}</span>
     </Button>
+  );
+};
+
+export const SideMenuButton = ({
+  isSidebarOpen,
+  Icon,
+  text,
+}: {
+  isSidebarOpen: boolean;
+  Icon: IconType;
+  text?: string;
+}) => {
+  return (
+    <CustomButton
+      className={cn([
+        "w-full justify-start",
+        {
+          "rounded-full": !isSidebarOpen,
+        },
+      ])}
+      Icon={Icon}
+      variant={"ghost"}
+      text={isSidebarOpen ? text : undefined}
+    />
   );
 };
